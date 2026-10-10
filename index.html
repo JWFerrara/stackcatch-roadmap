@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stack & Catch — Mission Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+/* ======= EDIT THIS OBJECT TO UPDATE THE PAGE ======= */
+const DATA = {
+  lastUpdated: "Oct 10, 2026",
+  mission: "FOR THE PEOPLE",
+  missionLine: "All of SpaceX, explained simply, for newcomers — plain words, real numbers on screen, the people behind the rockets.",
+  audience: "Curious newcomers (US-heavy) who see SpaceX headlines but don't know the basics. Not engineers.",
+  releaseRule: "Weekly long-form · Saturdays 9:00 AM CT · 3–4 chapter Shorts each",
+  pillars: [
+    {id:1,name:"Rockets & Reuse",color:"#FFD400",desc:"Cost, catching, launch sites."},
+    {id:2,name:"Starship & Beyond",color:"#FF7A45",desc:"Moon, Mars, refueling."},
+    {id:3,name:"Starlink",color:"#3FA9FF",desc:"Internet and phones from space — niche angles only; generic “how Starlink works” is saturated."},
+    {id:4,name:"Defense",color:"#9B7BFF",desc:"Starshield, Golden Dome — factual, no “secret weapon” hype."},
+    {id:5,name:"The Business",color:"#2EE6A6",desc:"Family tree, AI/xAI, money, IPO — no investment advice."}
+  ],
+  // status: LIVE | SCRIPT DRAFTED | PITCHED | PLANNED | NEEDS HOOK ; tag: Hero | Hub | Help
+  episodes: [
+    {wk:1,date:"2026-10-10",pillar:1,tag:"Hero",status:"LIVE",title:"SpaceX Made Space 95% Cheaper. Starship Is Going for 99%.",
+     desc:"The foundation idea: how reusable rockets cut the cost of reaching orbit, and the math behind Starship's push to go much further. A cost-per-kg scoreboard tracks each rocket as the story moves.",
+     why:"Cost is the idea every later episode builds on.",binge:"→ Catching is how reuse saves money (Ep 2).",hook:"95% cheaper today; going for 99%",
+     shorts:["Cost to launch 1 kg (Sun Oct 11 — teaser)","Booster thrust (Thu Oct 15)"],url:"https://youtu.be/QKwmAhbZYEY"},
+    {wk:2,date:"2026-10-17",pillar:1,tag:"Hero",status:"SCRIPT DRAFTED",note:"Rewrite in progress",title:"The 4 Things That Must Go Right to Catch a Rocket",
+     desc:"A returning booster is aimed at the ocean by default and only turns for the tower if everything checks out. Four chapters — slowed from faster than sound, on target, engines and tower healthy, a human says go — each earn a checkmark.",
+     why:"Best footage we have; catch explainers are mostly news or technical.",binge:"Ep 1's reuse → the catch.",hook:"",shorts:["3–4 chapter Shorts, one per checklist item (planned)"]},
+    {wk:3,date:"2026-10-24",pillar:1,tag:"Hero",status:"SCRIPT DRAFTED",title:"Can Starship Really Launch Every Hour? (Starbase Louisiana)",
+     desc:"Elon says Starship is “2 to 3 years away from hourly flights.” We weigh that against reality, walk the four things that make it possible, tour today's sites, and land on Starbase Louisiana — a planned $100B, 10-pad site — as the answer.",
+     why:"Fresh news (Aug 25 announcement) and a strong question hook.",binge:"Catching enables fast reflights → hourly launches.",hook:"Starship has flown 3 times this year",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:4,date:"2026-10-31",pillar:5,tag:"Hub",status:"PITCHED",note:"Visual done",title:"SpaceX's Family Tree: Everything One Company Does",
+     desc:"One map of everything SpaceX does, from rockets to Starlink to defense to AI. It's the hub every pillar hangs off.",
+     why:"Top videos are one-off business framing; nobody owns the full scope.",binge:"Zoom out from rockets to the whole company; seeds every branch.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:5,date:"2026-11-07",pillar:4,tag:"Help",status:"PLANNED",title:"Starshield, Explained Simply",
+     desc:"What Starshield is, who it's for, and how it differs from Starlink, in plain words.",
+     why:"Widest gap found: one 1.22M-view hit, then under 20K.",binge:"Branch #1 off the Family Tree.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:6,date:"2026-11-14",pillar:3,tag:"Help",status:"PLANNED",title:"Your Phone Can Text From Space (Direct-to-Cell)",
+     desc:"How a normal phone can connect to a satellite, and what that means for dead zones.",
+     why:"Personal hook; generic Starlink is saturated but Direct-to-Cell is open.",binge:"Starshield's sibling network, for civilians.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:7,date:"2026-11-21",pillar:3,tag:"Hub",status:"PLANNED",title:"How Starlink Became SpaceX's Money Machine",
+     desc:"The Starlink business from public filing numbers, framed as the engine that pays for Mars.",
+     why:"Demand proven (CNBC video 6.3M); our angle is “pays for Mars.”",binge:"Phones → the whole Starlink business.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:8,date:"2026-11-28",pillar:5,tag:"Help",status:"PLANNED",title:"SpaceX's Biggest Customer Is… SpaceX",
+     desc:"Who actually buys SpaceX launches, and why the answer is mostly SpaceX itself.",
+     why:"Cheap to make for Thanksgiving week; open lane (estimate).",binge:"Starlink money → who buys the launches.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:9,date:"2026-12-05",pillar:4,tag:"Hero",status:"PLANNED",title:"Golden Dome: How SpaceX Got Into Missile Defense",
+     desc:"A factual look at SpaceX's role in missile defense plans, with no hype.",
+     why:"High interest; needs Starshield first.",binge:"Callback to Ep 5.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:10,date:"2026-12-12",pillar:2,tag:"Help",status:"NEEDS HOOK",title:"Refueling a Rocket in Orbit, in One Picture",
+     desc:"Why Starship needs refueling in orbit to reach the Moon and Mars, explained with one clear picture.",
+     why:"Beginner gap — current leaders are long and technical. Needs a verified hook number before scripting.",binge:"Back to Starship; sets up Moon/Mars.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:11,date:"2026-12-19",pillar:5,tag:"Help",status:"PLANNED",title:"Data Centers in Space? What SpaceX Is Planning",
+     desc:"What's real versus pitch in the space data center idea.",
+     why:"Hot but crowded — our lane is “what's real vs pitch.”",binge:"Business + Starship payload.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
+    {wk:12,date:"2026-12-26",pillar:2,tag:"Hero",status:"NEEDS HOOK",title:"Moon & Mars: What's Next for Starship (working title)",
+     desc:"A holiday-week look ahead at where Starship goes next. Topic is decided at checkpoint 2.",
+     why:"Evergreen holiday-week look ahead; topic TBD.",binge:"Ties the season back to Ep 1's 99% goal.",hook:"",shorts:["3–4 chapter Shorts (planned)"]}
+  ],
+  checkpoints: [
+    {date:"Oct 15",title:"Regroup after Episode 1",items:["Ep 1 first-5-days click rate, average % viewed, where viewers drop, Shorts → episode clicks","Adjust Ep 2 thumbnail and pacing","Confirm Ep 3 vs Family Tree order"]},
+    {date:"~Nov 2",title:"After Ep 4 (4-video test block)",items:["Compare results by pillar","Double down on the pillar with the best retention and subs","Move the weakest topics to the bench"]},
+    {date:"~Dec 1",title:"After Ep 8",items:["Plan weeks 13–24 (Season 2)"]}
+  ],
+  shortsPlan: ["Each Short = one chapter's single number or moment","Posted Sun–Thu after the episode, linked to the full episode","Best one doubles as a teaser before the next episode","No Shorts on episode day"],
+  bench: [{t:"xAI branch",p:5},{t:"SpaceX IPO for normal people",p:5},{t:"Star* names Mini Lesson",p:1}],
+  framework: [
+    {t:"Pillars = playlists",d:"3–5 topic themes, each its own playlist and repeatable format. Makes the channel promise obvious and builds binge paths."},
+    {t:"Make a show",d:"Formats we could make weekly for 52 weeks. ~80% core audience, ~20% experiments, ~30% of effort on packaging (title + thumbnail)."},
+    {t:"Test in blocks",d:"Run 4–8 videos, then expand or pivot on retention. Greenlight ideas on novelty, timing, and supply vs demand."},
+    {t:"Hero / Hub / Help",d:"Hero = big moments (catch, hourly launches). Hub = the Family Tree everything hangs off. Help = plain “what is X” episodes in open search lanes."},
+    {t:"One format, one look",d:"Like Kurzgesagt, Real Engineering and Wendover (observed, not measured): one question, one hook number, plain English."}
+  ],
+  sources: [
+    ["TubeAnalytics — Structure YouTube Content Pillars","https://www.tubeanalytics.net/blog/structure-youtube-content-pillars-channel-growth"],
+    ["Overseer — YouTube Content Pillar Map","https://www.overseeros.com/blog/youtube-content-pillar-map"],
+    ["Colin & Samir — New Rules of YouTube (Paddy Galloway)","https://www.colinandsamir.com/resources/the-new-rules-of-youtube-from-paddy-galloway"],
+    ["Paddy Galloway transcript (shows, bingeing)","https://thetranscriptdesk.substack.com/p/the-new-rules-of-youtube-2027-edited"],
+    ["Film Booth 6-point growth method","https://skillforge.digital/skills/film-booth/film-booth-6-point-youtube-growth-method"],
+    ["Colin & Samir on formats","https://podcast.creatorscience.com/colinandsamir/"],
+    ["“13 Years of YouTube Knowledge”","https://www.youtube.com/watch?v=7MWNGqmukmE"]
+  ]
+};
+</script>
+<style>
+:root{--y:#FFD400;--bg:#04060d;--glass:rgba(255,255,255,.045);--line:rgba(255,255,255,.1);--mut:rgba(255,255,255,.62)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;background:var(--bg);color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.stars,.stars:after{position:fixed;inset:0;z-index:-2;pointer-events:none;background-repeat:repeat}
+.stars{background-image:radial-gradient(1px 1px at 20px 30px,#fff8,transparent),radial-gradient(1px 1px at 120px 80px,#fff6,transparent),radial-gradient(1.5px 1.5px at 200px 160px,#fffa,transparent),radial-gradient(1px 1px at 60px 210px,#fff5,transparent),radial-gradient(1px 1px at 260px 40px,#fff7,transparent);background-size:300px 260px}
+.stars:after{content:"";background-image:radial-gradient(1px 1px at 50px 100px,#fff9,transparent),radial-gradient(1px 1px at 170px 20px,#fff5,transparent);background-size:220px 200px;animation:tw 6s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.25}to{opacity:.9}}
+.glow{position:fixed;z-index:-1;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(255,212,0,.08),transparent 60%);top:-400px;right:-300px;pointer-events:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--y);text-transform:uppercase;margin-bottom:14px}
+h2{font-size:clamp(30px,6vw,48px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:12px}
+.lead{color:var(--mut);max-width:640px;font-size:16px}
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(4,6,13,.6);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:56px;overflow-x:auto;scrollbar-width:none}
+nav b{font-weight:900;letter-spacing:.12em;font-size:13px;white-space:nowrap}nav b i{color:var(--y);font-style:normal}
+nav a{color:var(--mut);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:color .2s}nav a:hover{color:#fff}
+.hero{padding:90px 0 60px;min-height:88vh;display:flex;align-items:center}
+.hero h1{font-size:clamp(46px,13vw,124px);font-weight:900;letter-spacing:-.03em;line-height:.92}
+.hero h1 span{color:var(--y);text-shadow:0 0 40px rgba(255,212,0,.35)}
+.mission{display:inline-block;margin:28px 0 14px;padding:8px 16px;border:1px solid rgba(255,212,0,.5);border-radius:999px;color:var(--y);font-weight:800;letter-spacing:.3em;font-size:13px;box-shadow:0 0 24px rgba(255,212,0,.15)}
+.hero p{font-size:clamp(17px,2.4vw,22px);max-width:720px;color:#fffd;font-weight:500}
+.hero .aud{color:var(--mut);font-size:15px;margin-top:10px}
+.strip{display:grid;grid-template-columns:1fr;gap:12px;margin-top:44px}
+@media(min-width:760px){.strip{grid-template-columns:repeat(4,1fr)}}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.stat{padding:18px 20px}.stat small{display:block;font-size:11px;letter-spacing:.2em;color:var(--mut);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.stat div{font-weight:700;font-size:15px;line-height:1.35}.stat a{color:var(--y);text-decoration:none}
+.cd{font-variant-numeric:tabular-nums;font-size:24px!important;font-weight:800!important;color:var(--y);text-shadow:0 0 18px rgba(255,212,0,.35)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff3b3b;margin-right:7px;box-shadow:0 0 10px #ff3b3b;animation:pl 1.6s infinite}@keyframes pl{50%{opacity:.35}}
+.pgrid{display:grid;gap:14px;margin-top:36px;grid-template-columns:1fr}
+@media(min-width:640px){.pgrid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1000px){.pgrid{grid-template-columns:repeat(5,1fr)}}
+.pcard{padding:22px;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;cursor:pointer;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;text-align:left;color:#fff;font:inherit}
+.pcard:before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--c);box-shadow:0 0 18px var(--c)}
+.pcard:hover{transform:translateY(-4px)}.pcard.on{border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 10px 40px -12px var(--c)}
+.pcard .n{font-size:12px;font-weight:800;color:var(--c);letter-spacing:.2em}.pcard h3{font-size:19px;font-weight:800;margin:6px 0 8px;line-height:1.2}
+.pcard p{font-size:13.5px;color:var(--mut)}.pcard ul{list-style:none;margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.pcard li{font-size:12.5px;color:#fffc;padding:3px 0}.pcard li b{color:var(--c);margin-right:6px}
+.filterbar{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 20px;align-items:center}
+.chip{font:inherit;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:#fff;cursor:pointer;transition:.25s}
+.chip.on{background:var(--y);color:#000;border-color:var(--y);box-shadow:0 0 18px rgba(255,212,0,.35)}
+.tl{position:relative;padding-left:26px}.tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--y),rgba(255,212,0,.05))}
+.ep{position:relative;margin-bottom:14px;transition:opacity .4s,transform .4s,max-height .4s}
+.ep:before{content:"";position:absolute;left:-24px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--c)}
+.ep.live:before{background:var(--y);box-shadow:0 0 14px var(--y)}
+.ep.hide{display:none}
+.eph{padding:18px 20px;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;width:100%;background:none;border:0;color:#fff;font:inherit;text-align:left}
+.wk{text-align:center;min-width:52px}.wk small{display:block;font-size:10px;letter-spacing:.2em;color:var(--mut);font-weight:700}.wk b{font-size:26px;font-weight:900;line-height:1}
+.ep h3{font-size:16.5px;font-weight:700;line-height:1.3}.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.date{font-size:12px;color:var(--mut);font-weight:600;margin-right:4px}
+.b{font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:3px 9px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
+.bp{color:var(--c);border:1px solid var(--c)}.bt{background:rgba(255,255,255,.08);color:#fffc}
+.s-LIVE{background:#ff3b3b;color:#fff;box-shadow:0 0 12px rgba(255,59,59,.5)}.s-SCRIPT{background:var(--y);color:#000}.s-PITCHED{background:#2EE6A6;color:#002}.s-PLANNED{background:rgba(255,255,255,.14);color:#fff}.s-NEEDS{background:transparent;color:#FF7A45;border:1px dashed #FF7A45}
+.chev{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .4s;color:var(--y)}
+.ep.open .chev{transform:rotate(45deg)}
+.body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}.ep.open .body{grid-template-rows:1fr}
+.body>div{overflow:hidden}.inner{padding:0 20px 20px;border-top:1px solid var(--line);margin:0 20px;padding:16px 0 4px}
+.inner p{color:#fffd;font-size:14.5px;margin-bottom:12px}.kv{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:760px){.kv{grid-template-columns:1fr 1fr}}
+.kv div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13.5px}.kv small{display:block;font-size:10.5px;letter-spacing:.18em;color:var(--y);font-weight:800;text-transform:uppercase;margin-bottom:4px}
+.watch{display:inline-flex;align-items:center;gap:8px;margin:14px 0 6px;padding:10px 18px;border-radius:999px;background:var(--y);color:#000;font-weight:800;text-decoration:none;font-size:13px;box-shadow:0 0 24px rgba(255,212,0,.35)}
+.cgrid{display:grid;gap:14px;margin-top:36px}@media(min-width:900px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+.cp{padding:24px}.cp .d{font-size:30px;font-weight:900;color:var(--y);text-shadow:0 0 20px rgba(255,212,0,.3)}.cp h3{font-size:16px;margin:4px 0 12px}
+.cp li,.list li{font-size:14px;color:#fffd;margin:0 0 8px 18px}.cp li::marker,.list li::marker{color:var(--y)}
+.two{display:grid;gap:14px;margin-top:36px}@media(min-width:900px){.two{grid-template-columns:1fr 1fr}}.two>div{padding:26px}.two h3{font-size:18px;margin-bottom:14px}
+.bench{display:flex;flex-wrap:wrap;gap:8px}.bench span{padding:8px 14px;border-radius:12px;border:1px dashed var(--c);font-size:13px;font-weight:600}
+.fgrid{display:grid;gap:14px;margin-top:36px}@media(min-width:700px){.fgrid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1050px){.fgrid{grid-template-columns:repeat(5,1fr)}}
+.fw{padding:22px}.fw b{font-size:28px;font-weight:900;color:var(--y)}.fw h3{font-size:16px;margin:4px 0 8px}.fw p{font-size:13.5px;color:var(--mut)}
+.src{margin-top:30px;padding:22px}.src a{display:block;color:#fffc;font-size:13.5px;padding:7px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:color .2s}.src a:hover{color:var(--y)}
+footer{padding:40px 0 60px;color:var(--mut);font-size:12px;text-align:center}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.stars:after{animation:none}}
+</style></head><body>
+<div class="stars"></div><div class="glow"></div>
+<nav><div class="wrap"><b>STACK <i>&</i> CATCH</b><a href="#pillars">Pillars</a><a href="#roadmap">Roadmap</a><a href="#checkpoints">Checkpoints</a><a href="#shorts">Shorts</a><a href="#how">How we plan</a></div></nav>
+<header class="hero"><div class="wrap">
+<div class="eyebrow rv">Mission Control · Season 1</div>
+<h1 class="rv">STACK <span>&</span><br>CATCH</h1>
+<div class="mission rv" id="mission"></div>
+<p class="rv" id="mline"></p><p class="aud rv" id="aud"></p>
+<div class="strip" id="strip"></div>
+</div></header>
+<section id="pillars"><div class="wrap"><div class="eyebrow rv">01 · Pillars</div><h2 class="rv">Five lanes. One promise.</h2><p class="lead rv">Each pillar is its own playlist. Tap one to filter the roadmap.</p><div class="pgrid" id="pgrid"></div></div></section>
+<section id="roadmap"><div class="wrap"><div class="eyebrow rv">02 · Roadmap</div><h2 class="rv">12 weeks, built to binge.</h2><p class="lead rv" id="rule"></p><div class="filterbar" id="fbar"></div><div class="tl" id="tl"></div></div></section>
+<section id="checkpoints"><div class="wrap"><div class="eyebrow rv">03 · Checkpoints</div><h2 class="rv">Data decides the order.</h2><p class="lead rv">At each checkpoint, real numbers can reshuffle the plan.</p><div class="cgrid" id="cgrid"></div></div></section>
+<section id="shorts"><div class="wrap"><div class="eyebrow rv">04 · Shorts & Bench</div><h2 class="rv">Every episode feeds the funnel.</h2><div class="two"><div class="glass rv"><h3>Shorts plan · 3–4 per episode</h3><ul class="list" id="splan"></ul></div><div class="glass rv"><h3>The bench · parked ideas</h3><p class="lead" style="font-size:14px;margin-bottom:14px">Swap in when data or news calls for it.</p><div class="bench" id="bench"></div></div></div></div></section>
+<section id="how"><div class="wrap"><div class="eyebrow rv">05 · How we plan</div><h2 class="rv">The playbook, in plain words.</h2><p class="lead rv">Pillars → series playlists → 12-week test blocks. A hybrid of proven creator strategies, picked for a new weekly explainer channel.</p><div class="fgrid" id="fgrid"></div><div class="src glass rv"><div class="eyebrow">Sources</div><div id="src"></div></div></div></section>
+<footer id="foot"></footer>
+<script>
+const $=id=>document.getElementById(id),P=Object.fromEntries(DATA.pillars.map(p=>[p.id,p]));
+const fmt=d=>new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"});
+const today=new Date();
+$("mission").textContent=DATA.mission;$("mline").textContent=DATA.missionLine;$("aud").textContent="Audience: "+DATA.audience;$("rule").textContent=DATA.releaseRule;
+const live=[...DATA.episodes].reverse().find(e=>e.status==="LIVE"),next=DATA.episodes.find(e=>e.status!=="LIVE");
+// Next Saturday 9 AM CT (America/Chicago)
+function nextRelease(){const now=new Date();for(let i=0;i<8;i++){const d=new Date(now.getTime()+i*864e5);const parts=new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",year:"numeric",month:"2-digit",day:"2-digit",weekday:"short"}).formatToParts(d).reduce((a,p)=>(a[p.type]=p.value,a),{});if(parts.weekday!=="Sat")continue;
+ for(const off of[5,6]){const t=new Date(`${parts.year}-${parts.month}-${parts.day}T${String(9+off).padStart(2,"0")}:00:00Z`);const h=+new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",hour:"numeric",hour12:false}).format(t);if(h===9&&t>now)return t;}}return null}
+$("strip").innerHTML=`
+<div class="stat glass rv"><small><span class="dot"></span>Latest live</small><div>Ep ${live.wk} · <a href="${live.url}" target="_blank" rel="noopener">${live.title}</a></div></div>
+<div class="stat glass rv"><small>Next episode · ${fmt(next.date)}</small><div>Ep ${next.wk} · ${next.title}</div></div>
+<div class="stat glass rv"><small>Next release · Sat 9:00 AM CT</small><div class="cd" id="cd">—</div></div>
+<div class="stat glass rv"><small>Last updated</small><div>${DATA.lastUpdated}</div></div>`;
+function tick(){const t=nextRelease();if(!t)return;let s=Math.max(0,(t-new Date())/1e3|0);const d=s/86400|0;s%=86400;const h=s/3600|0;s%=3600;const m=s/60|0;s%=60;$("cd").textContent=`${d}d ${String(h).padStart(2,"0")}h ${String(m).padStart(2,"0")}m ${String(s).padStart(2,"0")}s`}tick();setInterval(tick,1000);
+$("pgrid").innerHTML=DATA.pillars.map(p=>`<button class="pcard glass rv" style="--c:${p.color}" data-p="${p.id}"><div class="n">PILLAR ${p.id}</div><h3>${p.name}</h3><p>${p.desc}</p><ul>${DATA.episodes.filter(e=>e.pillar===p.id).map(e=>`<li><b>Ep ${e.wk}</b>${e.title}</li>`).join("")}</ul></button>`).join("");
+let filter=0;
+function setFilter(f){filter=filter===f?0:f;document.querySelectorAll(".pcard").forEach(c=>c.classList.toggle("on",+c.dataset.p===filter));document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on",+c.dataset.p===filter));document.querySelectorAll(".ep").forEach(e=>e.classList.toggle("hide",filter&&+e.dataset.p!==filter))}
+$("fbar").innerHTML=`<button class="chip on" data-p="0">All</button>`+DATA.pillars.map(p=>`<button class="chip" data-p="${p.id}" style="--c:${p.color}">${p.name}</button>`).join("");
+$("fbar").onclick=e=>{const b=e.target.closest(".chip");if(b){filter=-1;setFilter(+b.dataset.p)}};
+document.querySelectorAll(".pcard").forEach(c=>c.onclick=()=>{setFilter(+c.dataset.p);$("roadmap").scrollIntoView({behavior:"smooth"})});
+$("tl").innerHTML=DATA.episodes.map(e=>{const p=P[e.pillar];return `<div class="ep glass rv ${e.status==="LIVE"?"live":""}" data-p="${e.pillar}" style="--c:${p.color}">
+<button class="eph" aria-expanded="false"><div class="wk"><small>WK</small><b>${String(e.wk).padStart(2,"0")}</b></div><div><h3>${e.title}</h3><div class="meta"><span class="date">${fmt(e.date)}</span><span class="b bp">${p.name}</span><span class="b bt">${e.tag}</span><span class="b s-${e.status.split(" ")[0]}">${e.status}</span>${e.note?`<span class="date">· ${e.note}</span>`:""}</div></div><div class="chev">+</div></button>
+<div class="body"><div><div class="inner"><p>${e.desc}</p><div class="kv"><div><small>Why this slot</small>${e.why}</div><div><small>Binge link</small>${e.binge}</div><div><small>Hook number</small>${e.hook||"Not verified yet"}</div><div><small>Chapter Shorts</small>${e.shorts.join("<br>")}</div></div>${e.url?`<a class="watch" href="${e.url}" target="_blank" rel="noopener">▶ Watch on YouTube</a>`:""}</div></div></div></div>`}).join("");
+document.querySelectorAll(".eph").forEach(b=>b.onclick=()=>{const ep=b.parentElement;ep.classList.toggle("open");b.setAttribute("aria-expanded",ep.classList.contains("open"))});
+$("cgrid").innerHTML=DATA.checkpoints.map(c=>`<div class="cp glass rv"><div class="d">${c.date}</div><h3>${c.title}</h3><ul>${c.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>`).join("");
+$("splan").innerHTML=DATA.shortsPlan.map(s=>`<li>${s}</li>`).join("");
+$("bench").innerHTML=DATA.bench.map(b=>`<span style="--c:${P[b.p].color}">${b.t} <small style="color:${P[b.p].color}">· ${P[b.p].name}</small></span>`).join("");
+$("fgrid").innerHTML=DATA.framework.map((f,i)=>`<div class="fw glass rv"><b>0${i+1}</b><h3>${f.t}</h3><p>${f.d}</p></div>`).join("");
+$("src").innerHTML=DATA.sources.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]} ↗</a>`).join("");
+$("foot").textContent=`Stack & Catch · Mission roadmap · Last updated ${DATA.lastUpdated}`;
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%5)*60+"ms";io.observe(el)});
+</script></body></html>
