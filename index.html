@@ -4,11 +4,11 @@
 <script>
 /* ======= EDIT THIS OBJECT TO UPDATE THE PAGE ======= */
 const DATA = {
-  lastUpdated: "Oct 10, 2026",
+  lastUpdated: "Oct 13, 2026",
   mission: "FOR THE PEOPLE",
   missionLine: "All of SpaceX, explained simply, for newcomers — plain words, real numbers on screen, the people behind the rockets.",
   audience: "Curious newcomers (US-heavy) who see SpaceX headlines but don't know the basics. Not engineers.",
-  releaseRule: "Weekly long-form · Saturdays 9:00 AM CT · 3–4 chapter Shorts each",
+  releaseRule: "Up to 2 long-form episodes a week (Mon & Thu, 7 PM CT) · 1 Short a day · Sunday metrics check-in · Drop to 1/week if polish slips",
   pillars: [
     {id:1,name:"Rockets & Reuse",color:"#FFD400",desc:"Cost, catching, launch sites."},
     {id:2,name:"Starship & Beyond",color:"#FF7A45",desc:"Moon, Mars, refueling."},
@@ -22,46 +22,47 @@ const DATA = {
      desc:"The foundation idea: how reusable rockets cut the cost of reaching orbit, and the math behind Starship's push to go much further. A cost-per-kg scoreboard tracks each rocket as the story moves.",
      why:"Cost is the idea every later episode builds on.",binge:"→ Catching is how reuse saves money (Ep 2).",hook:"95% cheaper today; going for 99%",
      shorts:["Cost to launch 1 kg (Sun Oct 11 — teaser)","Booster thrust (Thu Oct 15)"],url:"https://youtu.be/QKwmAhbZYEY"},
-    {wk:2,date:"2026-10-17",pillar:1,tag:"Hero",status:"SCRIPT DRAFTED",note:"Rewrite in progress",title:"The 4 Things That Must Go Right to Catch a Rocket",
-     desc:"A returning booster is aimed at the ocean by default and only turns for the tower if everything checks out. Four chapters — slowed from faster than sound, on target, engines and tower healthy, a human says go — each earn a checkmark.",
-     why:"Best footage we have; catch explainers are mostly news or technical.",binge:"Ep 1's reuse → the catch.",hook:"",shorts:["3–4 chapter Shorts, one per checklist item (planned)"]},
-    {wk:3,date:"2026-10-24",pillar:1,tag:"Hero",status:"SCRIPT DRAFTED",title:"Can Starship Really Launch Every Hour? (Starbase Louisiana)",
-     desc:"Elon says Starship is “2 to 3 years away from hourly flights.” We weigh that against reality, walk the four things that make it possible, tour today's sites, and land on Starbase Louisiana — a planned $100B, 10-pad site — as the answer.",
-     why:"Fresh news (Aug 25 announcement) and a strong question hook.",binge:"Catching enables fast reflights → hourly launches.",hook:"Starship has flown 3 times this year",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:4,date:"2026-10-31",pillar:5,tag:"Hub",status:"PITCHED",note:"Visual done",title:"SpaceX's Family Tree: Everything One Company Does",
+    {wk:2,date:"2026-10-13",pillar:1,tag:"Hero",status:"SCHEDULED",note:"Tue 7 PM CT",title:"Why SpaceX Catches Rockets Instead of Landing",
+     desc:"The booster has no landing legs, so SpaceX built a tower to grab it out of the air. Four things must go right for a catch, and each earns a checkmark; ends on a montage of all three successful catches.",
+     why:"Best footage we have; released on the 2nd anniversary of the first catch.",binge:"Ep 1's reuse → the catch.",hook:"No landing legs",shorts:["1 Short a day cut from this episode, each linking back (from Fri Oct 16)","How much does the catch tower weigh? (planned)"],url:"https://youtu.be/Hg9JCyULsLg"},
+    {wk:3,date:"2026-10-15",pillar:1,tag:"Hero",status:"IN PRODUCTION",note:"Thu 7 PM CT",title:"Could SpaceX Launch a Rocket Every Hour?",
+     desc:"Hook: the new FAA review of SpaceX's request to raise Starbase, Texas launches from 25 a year to as many as 456. Then the pieces that make hourly flights possible, today's sites, and a deep dive on Starbase Louisiana — a planned $100B, 10-pad site.",
+     why:"Fresh news: FAA filing went public Oct 13 (comments open to Nov 30).",binge:"Catching enables fast reflights → hourly launches.",hook:"25 → 456 launches a year (FAA filing)",shorts:["1 Short a day cut from this episode, each linking back (planned)"]},
+    {wk:4,date:"2026-10-19",pillar:5,tag:"Hub",status:"PITCHED",note:"Visual done",title:"SpaceX's Family Tree: Everything One Company Does",
      desc:"One map of everything SpaceX does, from rockets to Starlink to defense to AI. It's the hub every pillar hangs off.",
-     why:"Top videos are one-off business framing; nobody owns the full scope.",binge:"Zoom out from rockets to the whole company; seeds every branch.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:5,date:"2026-11-07",pillar:4,tag:"Help",status:"PLANNED",title:"Starshield, Explained Simply",
+     why:"Top videos are one-off business framing; nobody owns the full scope.",binge:"Zoom out from rockets to the whole company; seeds every branch.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]},
+    {wk:5,date:"2026-10-22",pillar:4,tag:"Help",status:"PLANNED",title:"Starshield, Explained Simply",
      desc:"What Starshield is, who it's for, and how it differs from Starlink, in plain words.",
-     why:"Widest gap found: one 1.22M-view hit, then under 20K.",binge:"Branch #1 off the Family Tree.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:6,date:"2026-11-14",pillar:3,tag:"Help",status:"PLANNED",title:"Your Phone Can Text From Space (Direct-to-Cell)",
+     why:"Widest gap found: one 1.22M-view hit, then under 20K.",binge:"Branch #1 off the Family Tree.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]},
+    {wk:6,date:"2026-10-26",pillar:3,tag:"Help",status:"PLANNED",title:"Your Phone Can Text From Space (Direct-to-Cell)",
      desc:"How a normal phone can connect to a satellite, and what that means for dead zones.",
-     why:"Personal hook; generic Starlink is saturated but Direct-to-Cell is open.",binge:"Starshield's sibling network, for civilians.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:7,date:"2026-11-21",pillar:3,tag:"Hub",status:"PLANNED",title:"How Starlink Became SpaceX's Money Machine",
+     why:"Personal hook; generic Starlink is saturated but Direct-to-Cell is open.",binge:"Starshield's sibling network, for civilians.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]},
+    {wk:7,date:"2026-10-29",pillar:3,tag:"Hub",status:"PLANNED",title:"How Starlink Became SpaceX's Money Machine",
      desc:"The Starlink business from public filing numbers, framed as the engine that pays for Mars.",
-     why:"Demand proven (CNBC video 6.3M); our angle is “pays for Mars.”",binge:"Phones → the whole Starlink business.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:8,date:"2026-11-28",pillar:5,tag:"Help",status:"PLANNED",title:"SpaceX's Biggest Customer Is… SpaceX",
+     why:"Demand proven (CNBC video 6.3M); our angle is “pays for Mars.”",binge:"Phones → the whole Starlink business.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]},
+    {wk:8,date:"2026-11-02",pillar:5,tag:"Help",status:"PLANNED",title:"SpaceX's Biggest Customer Is… SpaceX",
      desc:"Who actually buys SpaceX launches, and why the answer is mostly SpaceX itself.",
-     why:"Cheap to make for Thanksgiving week; open lane (estimate).",binge:"Starlink money → who buys the launches.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:9,date:"2026-12-05",pillar:4,tag:"Hero",status:"PLANNED",title:"Golden Dome: How SpaceX Got Into Missile Defense",
+     why:"Cheap to make; open lane (estimate).",binge:"Starlink money → who buys the launches.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]},
+    {wk:9,date:"2026-11-05",pillar:4,tag:"Hero",status:"PLANNED",title:"Golden Dome: How SpaceX Got Into Missile Defense",
      desc:"A factual look at SpaceX's role in missile defense plans, with no hype.",
-     why:"High interest; needs Starshield first.",binge:"Callback to Ep 5.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:10,date:"2026-12-12",pillar:2,tag:"Help",status:"NEEDS HOOK",title:"Refueling a Rocket in Orbit, in One Picture",
+     why:"High interest; needs Starshield first.",binge:"Callback to Ep 5.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]},
+    {wk:10,date:"2026-11-09",pillar:2,tag:"Help",status:"NEEDS HOOK",title:"Refueling a Rocket in Orbit, in One Picture",
      desc:"Why Starship needs refueling in orbit to reach the Moon and Mars, explained with one clear picture.",
-     why:"Beginner gap — current leaders are long and technical. Needs a verified hook number before scripting.",binge:"Back to Starship; sets up Moon/Mars.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:11,date:"2026-12-19",pillar:5,tag:"Help",status:"PLANNED",title:"Data Centers in Space? What SpaceX Is Planning",
+     why:"Beginner gap — current leaders are long and technical. Needs a verified hook number before scripting.",binge:"Back to Starship; sets up Moon/Mars.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]},
+    {wk:11,date:"2026-11-12",pillar:5,tag:"Help",status:"PLANNED",title:"Data Centers in Space? What SpaceX Is Planning",
      desc:"What's real versus pitch in the space data center idea.",
-     why:"Hot but crowded — our lane is “what's real vs pitch.”",binge:"Business + Starship payload.",hook:"",shorts:["3–4 chapter Shorts (planned)"]},
-    {wk:12,date:"2026-12-26",pillar:2,tag:"Hero",status:"NEEDS HOOK",title:"Moon & Mars: What's Next for Starship (working title)",
-     desc:"A holiday-week look ahead at where Starship goes next. Topic is decided at checkpoint 2.",
-     why:"Evergreen holiday-week look ahead; topic TBD.",binge:"Ties the season back to Ep 1's 99% goal.",hook:"",shorts:["3–4 chapter Shorts (planned)"]}
+     why:"Hot but crowded — our lane is “what's real vs pitch.”",binge:"Business + Starship payload.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]},
+    {wk:12,date:"2026-11-16",pillar:2,tag:"Hero",status:"NEEDS HOOK",title:"Moon & Mars: What's Next for Starship (working title)",
+     desc:"A look ahead at where Starship goes next. Topic is decided at checkpoint 2.",
+     why:"Evergreen look ahead; topic TBD.",binge:"Ties the season back to Ep 1's 99% goal.",hook:"",shorts:["Daily Shorts cut from this episode, linking back (planned)"]}
   ],
   checkpoints: [
-    {date:"Oct 15",title:"Regroup after Episode 1",items:["Ep 1 first-5-days click rate, average % viewed, where viewers drop, Shorts → episode clicks","Adjust Ep 2 thumbnail and pacing","Confirm Ep 3 vs Family Tree order"]},
-    {date:"~Nov 2",title:"After Ep 4 (4-video test block)",items:["Compare results by pillar","Double down on the pillar with the best retention and subs","Move the weakest topics to the bench"]},
-    {date:"~Dec 1",title:"After Ep 8",items:["Plan weeks 13–24 (Season 2)"]}
+    {date:"Every Sunday",title:"Weekly metrics check-in",items:["Click-through rate (goal 4%+)","Average view duration / % viewed (goal 40%+)","Shorts → episode clicks","Adjust cadence: drop to 1 episode/week if polish slips; talk about 3 if numbers climb"]},
+    {date:"Oct 18",title:"First Sunday check-in (Ep 1 + Ep 2)",items:["Ep 2 click rate vs Ep 1 (new title/thumbnail/hook style)","Average % viewed and where viewers drop","Shorts → episode clicks"]},
+    {date:"~Oct 25",title:"After Ep 4 (4-video test block)",items:["Compare results by pillar","Double down on the pillar with the best retention and subs","Move the weakest topics to the bench"]},
+    {date:"~Nov 8",title:"After Ep 9",items:["Plan the next 12 episodes (Season 2)"]}
   ],
-  shortsPlan: ["Each Short = one chapter's single number or moment","Posted Sun–Thu after the episode, linked to the full episode","Best one doubles as a teaser before the next episode","No Shorts on episode day"],
+  shortsPlan: ["1 Short a day","Mostly cut from the newest episode, each linking back to it (related video + pinned comment)","Each Short = one single number or moment (“How much…” format wins)","Change one variable per Short and log retention + swipe-away"],
   bench: [{t:"xAI branch",p:5},{t:"SpaceX IPO for normal people",p:5},{t:"Star* names Mini Lesson",p:1}],
   framework: [
     {t:"Pillars = playlists",d:"3–5 topic themes, each its own playlist and repeatable format. Makes the channel promise obvious and builds binge paths."},
@@ -134,7 +135,7 @@ nav a{color:var(--mut);text-decoration:none;font-size:12px;font-weight:600;lette
 .date{font-size:12px;color:var(--mut);font-weight:600;margin-right:4px}
 .b{font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:3px 9px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
 .bp{color:var(--c);border:1px solid var(--c)}.bt{background:rgba(255,255,255,.08);color:#fffc}
-.s-LIVE{background:#ff3b3b;color:#fff;box-shadow:0 0 12px rgba(255,59,59,.5)}.s-SCRIPT{background:var(--y);color:#000}.s-PITCHED{background:#2EE6A6;color:#002}.s-PLANNED{background:rgba(255,255,255,.14);color:#fff}.s-NEEDS{background:transparent;color:#FF7A45;border:1px dashed #FF7A45}
+.s-LIVE{background:#ff3b3b;color:#fff;box-shadow:0 0 12px rgba(255,59,59,.5)}.s-SCRIPT{background:var(--y);color:#000}.s-PITCHED{background:#2EE6A6;color:#002}.s-PLANNED{background:rgba(255,255,255,.14);color:#fff}.s-SCHEDULED{background:#3FA9FF;color:#001}.s-IN{background:#FF7A45;color:#000}.s-NEEDS{background:transparent;color:#FF7A45;border:1px dashed #FF7A45}
 .chev{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .4s;color:var(--y)}
 .ep.open .chev{transform:rotate(45deg)}
 .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}.ep.open .body{grid-template-rows:1fr}
@@ -164,10 +165,10 @@ footer{padding:40px 0 60px;color:var(--mut);font-size:12px;text-align:center}
 <div class="strip" id="strip"></div>
 </div></header>
 <section id="pillars"><div class="wrap"><div class="eyebrow rv">01 · Pillars</div><h2 class="rv">Five lanes. One promise.</h2><p class="lead rv">Each pillar is its own playlist. Tap one to filter the roadmap.</p><div class="pgrid" id="pgrid"></div></div></section>
-<section id="roadmap"><div class="wrap"><div class="eyebrow rv">02 · Roadmap</div><h2 class="rv">12 weeks, built to binge.</h2><p class="lead rv" id="rule"></p><div class="filterbar" id="fbar"></div><div class="tl" id="tl"></div></div></section>
+<section id="roadmap"><div class="wrap"><div class="eyebrow rv">02 · Roadmap</div><h2 class="rv">12 episodes, built to binge.</h2><p class="lead rv" id="rule"></p><div class="filterbar" id="fbar"></div><div class="tl" id="tl"></div></div></section>
 <section id="checkpoints"><div class="wrap"><div class="eyebrow rv">03 · Checkpoints</div><h2 class="rv">Data decides the order.</h2><p class="lead rv">At each checkpoint, real numbers can reshuffle the plan.</p><div class="cgrid" id="cgrid"></div></div></section>
 <section id="shorts"><div class="wrap"><div class="eyebrow rv">04 · Shorts & Bench</div><h2 class="rv">Every episode feeds the funnel.</h2><div class="two"><div class="glass rv"><h3>Shorts plan · 3–4 per episode</h3><ul class="list" id="splan"></ul></div><div class="glass rv"><h3>The bench · parked ideas</h3><p class="lead" style="font-size:14px;margin-bottom:14px">Swap in when data or news calls for it.</p><div class="bench" id="bench"></div></div></div></div></section>
-<section id="how"><div class="wrap"><div class="eyebrow rv">05 · How we plan</div><h2 class="rv">The playbook, in plain words.</h2><p class="lead rv">Pillars → series playlists → 12-week test blocks. A hybrid of proven creator strategies, picked for a new weekly explainer channel.</p><div class="fgrid" id="fgrid"></div><div class="src glass rv"><div class="eyebrow">Sources</div><div id="src"></div></div></div></section>
+<section id="how"><div class="wrap"><div class="eyebrow rv">05 · How we plan</div><h2 class="rv">The playbook, in plain words.</h2><p class="lead rv">Pillars → series playlists → 12-episode test blocks. A hybrid of proven creator strategies, picked for a new twice-weekly explainer channel.</p><div class="fgrid" id="fgrid"></div><div class="src glass rv"><div class="eyebrow">Sources</div><div id="src"></div></div></div></section>
 <footer id="foot"></footer>
 <script>
 const $=id=>document.getElementById(id),P=Object.fromEntries(DATA.pillars.map(p=>[p.id,p]));
@@ -175,13 +176,12 @@ const fmt=d=>new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",d
 const today=new Date();
 $("mission").textContent=DATA.mission;$("mline").textContent=DATA.missionLine;$("aud").textContent="Audience: "+DATA.audience;$("rule").textContent=DATA.releaseRule;
 const live=[...DATA.episodes].reverse().find(e=>e.status==="LIVE"),next=DATA.episodes.find(e=>e.status!=="LIVE");
-// Next Saturday 9 AM CT (America/Chicago)
-function nextRelease(){const now=new Date();for(let i=0;i<8;i++){const d=new Date(now.getTime()+i*864e5);const parts=new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",year:"numeric",month:"2-digit",day:"2-digit",weekday:"short"}).formatToParts(d).reduce((a,p)=>(a[p.type]=p.value,a),{});if(parts.weekday!=="Sat")continue;
- for(const off of[5,6]){const t=new Date(`${parts.year}-${parts.month}-${parts.day}T${String(9+off).padStart(2,"0")}:00:00Z`);const h=+new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",hour:"numeric",hour12:false}).format(t);if(h===9&&t>now)return t;}}return null}
+// Next episode release 7 PM CT (America/Chicago)
+function nextRelease(){const now=new Date();for(const e of DATA.episodes){if(e.status==="LIVE")continue;const[y,m,d]=e.date.split("-").map(Number);for(const off of[5,6]){const t=new Date(Date.UTC(y,m-1,d,19+off));const h=+new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",hour:"numeric",hour12:false}).format(t);if(h===19&&t>now)return t;}}return null}
 $("strip").innerHTML=`
 <div class="stat glass rv"><small><span class="dot"></span>Latest live</small><div>Ep ${live.wk} · <a href="${live.url}" target="_blank" rel="noopener">${live.title}</a></div></div>
 <div class="stat glass rv"><small>Next episode · ${fmt(next.date)}</small><div>Ep ${next.wk} · ${next.title}</div></div>
-<div class="stat glass rv"><small>Next release · Sat 9:00 AM CT</small><div class="cd" id="cd">—</div></div>
+<div class="stat glass rv"><small>Next release · Mon/Thu 7:00 PM CT</small><div class="cd" id="cd">—</div></div>
 <div class="stat glass rv"><small>Last updated</small><div>${DATA.lastUpdated}</div></div>`;
 function tick(){const t=nextRelease();if(!t)return;let s=Math.max(0,(t-new Date())/1e3|0);const d=s/86400|0;s%=86400;const h=s/3600|0;s%=3600;const m=s/60|0;s%=60;$("cd").textContent=`${d}d ${String(h).padStart(2,"0")}h ${String(m).padStart(2,"0")}m ${String(s).padStart(2,"0")}s`}tick();setInterval(tick,1000);
 $("pgrid").innerHTML=DATA.pillars.map(p=>`<button class="pcard glass rv" style="--c:${p.color}" data-p="${p.id}"><div class="n">PILLAR ${p.id}</div><h3>${p.name}</h3><p>${p.desc}</p><ul>${DATA.episodes.filter(e=>e.pillar===p.id).map(e=>`<li><b>Ep ${e.wk}</b>${e.title}</li>`).join("")}</ul></button>`).join("");
@@ -191,7 +191,7 @@ $("fbar").innerHTML=`<button class="chip on" data-p="0">All</button>`+DATA.pilla
 $("fbar").onclick=e=>{const b=e.target.closest(".chip");if(b){filter=-1;setFilter(+b.dataset.p)}};
 document.querySelectorAll(".pcard").forEach(c=>c.onclick=()=>{setFilter(+c.dataset.p);$("roadmap").scrollIntoView({behavior:"smooth"})});
 $("tl").innerHTML=DATA.episodes.map(e=>{const p=P[e.pillar];return `<div class="ep glass rv ${e.status==="LIVE"?"live":""}" data-p="${e.pillar}" style="--c:${p.color}">
-<button class="eph" aria-expanded="false"><div class="wk"><small>WK</small><b>${String(e.wk).padStart(2,"0")}</b></div><div><h3>${e.title}</h3><div class="meta"><span class="date">${fmt(e.date)}</span><span class="b bp">${p.name}</span><span class="b bt">${e.tag}</span><span class="b s-${e.status.split(" ")[0]}">${e.status}</span>${e.note?`<span class="date">· ${e.note}</span>`:""}</div></div><div class="chev">+</div></button>
+<button class="eph" aria-expanded="false"><div class="wk"><small>EP</small><b>${String(e.wk).padStart(2,"0")}</b></div><div><h3>${e.title}</h3><div class="meta"><span class="date">${fmt(e.date)}</span><span class="b bp">${p.name}</span><span class="b bt">${e.tag}</span><span class="b s-${e.status.split(" ")[0]}">${e.status}</span>${e.note?`<span class="date">· ${e.note}</span>`:""}</div></div><div class="chev">+</div></button>
 <div class="body"><div><div class="inner"><p>${e.desc}</p><div class="kv"><div><small>Why this slot</small>${e.why}</div><div><small>Binge link</small>${e.binge}</div><div><small>Hook number</small>${e.hook||"Not verified yet"}</div><div><small>Chapter Shorts</small>${e.shorts.join("<br>")}</div></div>${e.url?`<a class="watch" href="${e.url}" target="_blank" rel="noopener">▶ Watch on YouTube</a>`:""}</div></div></div></div>`}).join("");
 document.querySelectorAll(".eph").forEach(b=>b.onclick=()=>{const ep=b.parentElement;ep.classList.toggle("open");b.setAttribute("aria-expanded",ep.classList.contains("open"))});
 $("cgrid").innerHTML=DATA.checkpoints.map(c=>`<div class="cp glass rv"><div class="d">${c.date}</div><h3>${c.title}</h3><ul>${c.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>`).join("");
